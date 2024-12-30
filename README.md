@@ -18,6 +18,7 @@ mkdir -p wlp-core-plugins
 git clone https://github.com/wlp-builders/whitelabelpress-wlp wlp-core-plugins
 ```
 
+
 ### Install help for Apache2
 One of the simplest way to add a (local) domain is to add a Virtual Host inside the apache2.conf and then reload. 
 ```
@@ -39,6 +40,12 @@ sudo tee -a $APACHE_CONF > /dev/null <<EOF
 EOF
 sudo systemctl reload apache2
 echo "Added virtual host for $DOMAIN_NAME to $APACHE_CONF"
+```
+
+### Install help hosts file
+Add the following line to your /etc/hosts file:
+```
+127.0.0.1 wlp1.local
 ```
 
 ### Install help for Windows
