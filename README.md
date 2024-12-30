@@ -17,3 +17,55 @@ mkdir -p wlp-core-plugins
 # Clone the core plugins into the appropriate directory
 git clone https://github.com/wlp-builders/whitelabelpress-wlp wlp-core-plugins
 ```
+
+### Install help for Apache2
+```
+APACHE_CONF="/etc/apache2/apache2.conf"
+DOMAIN_NAME="wlp1.local"
+FOLDER_PATH="/var/www/wlp1.local"
+
+# Append virtual host configuration to apache2.conf
+sudo tee -a $APACHE_CONF > /dev/null <<EOF 
+<VirtualHost *:80>
+    DocumentRoot $FOLDER_PATH
+    ServerName $DOMAIN_NAME
+
+    <Directory $FOLDER_PATH>
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+EOF
+echo "Added virtual host for $DOMAIN_NAME to $APACHE_CONF"
+```
+
+### Install help for if you are on Windows
+
+Here's a concise guide to start using Linux using Ubuntu 24.04 LTS:
+
+1. **Download Ubuntu 24.04 ISO**:
+   - Obtain the latest Ubuntu 24.04 LTS ISO from the official website: [Download Ubuntu](https://ubuntu.com/download/desktop).
+
+2. **Prepare a USB Flash Drive**:
+   - Ensure you have an empty USB flash drive with at least 8 GB capacity.
+
+3. **Create a Bootable USB**:
+   - **Using Rufus on Windows**:
+     - Download and install Rufus: [Rufus Download](https://rufus.ie/).
+     - Open Rufus, select your USB drive, choose the downloaded Ubuntu ISO, and click 'Start' to create the bootable USB.
+
+4. **Configure BIOS/UEFI Settings**:
+   - Restart your computer and access the BIOS/UEFI settings (commonly by pressing F2, F10, F12, or Del during startup).
+   - Disable Secure Boot if enabled.
+   - Set the USB drive as the primary boot device.
+
+5. **Boot from USB**:
+   - Insert the bootable USB and restart your computer.
+   - The system should boot into the Ubuntu live environment.
+
+6. **Start Ubuntu Installation**:
+   - In the live environment, double-click 'Install Ubuntu'.
+   - Follow the on-screen instructions
+   - Enjoy more (development) freedom
+
+ 
