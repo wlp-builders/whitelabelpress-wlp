@@ -6,10 +6,10 @@ Clone WLP into your public directory (ex. /var/www), then clone this directory i
 
 ```bash
 # Clone the main WLP repository
-git clone https://github.com/wlp-builders/wlp
+git clone https://github.com/wlp-builders/wlp wlp1.local
 
 # Navigate into the WLP directory
-cd wlp
+cd wlp1.local
 
 # Create the core plugins directory if it doesn't already exist
 mkdir -p wlp-core-plugins
