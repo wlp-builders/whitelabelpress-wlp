@@ -1,0 +1,93 @@
+/* General Form Styling */
+#customize-controls {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Header Section */
+#customize-header-actions {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #444;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#customize-header-actions .button-primary {
+    background-color: #0066cc;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+#customize-header-actions .button-primary:hover {
+    background-color: #005bb5;
+}
+
+/* Spinner */
+#customize-header-actions .spinner {
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+}
+
+/* Sidebar Content */
+#customize-sidebar-outer-content {
+    padding: 15px;
+}
+
+.customize-pane-child {
+    background-color: #181818;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Section Title */
+.customize-section-title h3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Control Rows */
+.customize-inside-control-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.customize-inside-control-row label {
+    margin-left: 5px;
+    color: #ddd;
+}
+
+/* Date-Time Fields */
+.date-time-fields {
+    background-color: #202020;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+.date-time-fields legend {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.date-time-fields .day-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.wp-full-overlay-sidebar .wp-full-overlay-header {
+  background-color: black!important;
+  transition: padding ease-in-out .18s;
+}
