@@ -50,7 +50,7 @@ Add the following line to your /etc/hosts file:
 
 ### Install help for Windows
 
-You can definitely run this on Windows. However most support will be for Linux. Here's a concise guide to start using Linux for more (development) freedom:
+You can definitely run this on Windows. However most support will be for Linux (local,VPS,Docker,Podman). Here's a concise guide to start using Linux for more (development) freedom:
 
 1. **Download Ubuntu 24.04 ISO**:
    - Obtain the latest Ubuntu 24.04 LTS ISO from the official website: [Download Ubuntu](https://ubuntu.com/download/desktop).
