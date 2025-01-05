@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Custom Post Types and Taxonomies Creator
- * Description: A single-page plugin to create and delete custom post types and taxonomies in WordPress.
- * Version: 1.4
- * Author: Your Name
+ * Description: A single-page plugin to create and delete custom post types and taxonomies in WLP.
+ * Version: 1.5
+ * Author: Neil
  */
 
 // Prevent direct access
@@ -193,14 +193,17 @@ function cpt_tc_save_post_type($data) {
 // Save custom taxonomy to the database
 function cpt_tc_save_taxonomy($data) {
     $taxonomy_name = sanitize_text_field($data['custom_taxonomy_name']);
-    $singular_label = ucfirst($taxonomy_name); // Singular label based on the input
-    $plural_label = $singular_label . 's'; // Plural label based on singular form (by adding "s")
+    $plural_label = ucfirst($taxonomy_name); // Singular label based on the input
 
     // Handle edge case for words that don't pluralize naturally (like "bus" -> "buses")
-    if (substr($taxonomy_name, -1) === 'y') {
-        $plural_label = rtrim($singular_label, 'y') . 'ies';
+    if (substr($taxonomy_name, -3) === 'ses') {
+        $singular_label = rtrim($taxonomy_name, 'es'); // If ends with "ies", replace it with "y"
+    } elseif (substr($taxonomy_name, -3) === 'ies') {
+        $singular_label = rtrim($taxonomy_name, 'ies') . 'y'; // If ends with "ies", replace it with "y"
     } elseif (substr($taxonomy_name, -1) === 's') {
-        $plural_label = $singular_label; // If the name already ends in "s", keep it as plural
+        $singular_label = rtrim($taxonomy_name, 's'); // If ends with "s", remove the "s" to make it singular
+    } else {
+        $singular_label = $taxonomy_name; // If it doesn't end in "s" or "ies", assume it's already singular
     }
 
     $labels = [
