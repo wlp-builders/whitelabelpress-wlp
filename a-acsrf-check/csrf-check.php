@@ -2,7 +2,7 @@
 /**
  * Plugin Name: CSRF Referrer Check with Site URL Validation
  * Description: A simple plugin to prevent CSRF attacks by checking the referer for POST requests, with special handling for /wp-admin and excluding admin-ajax.php.
- * Version: 1.1
+ * Version: 1.2
  * Author: Your Name
  * License: GPL2
  */
@@ -17,6 +17,11 @@ if (!defined('ABSPATH')) {
 function handle_csrf_with_referrer() {
     // Only apply to non-cli POST requests
 	if (php_sapi_name() != 'cli' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if (isset($_SERVER['HTTP_DID'])) {
+            return;  // Skip the CSRF checks for DID.json clients
+        }
+
         if (isset($_SERVER['HTTP_WLP_AUTHORIZATION'])) {
             return;  // Skip the CSRF checks for headless apps
         }
@@ -78,4 +83,5 @@ function check_site_url_with_wp_admin() {
 
 // Hook the CSRF check into WordPress's init action
 add_action('init', 'handle_csrf_with_referrer');
+
 
