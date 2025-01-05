@@ -15,8 +15,8 @@ if (!defined('ABSPATH')) {
  * Handle CSRF protection for POST requests
  */
 function handle_csrf_with_referrer() {
-    // Only apply to POST requests
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Only apply to non-cli POST requests
+	if (php_sapi_name() != 'cli' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_SERVER['HTTP_WLP_AUTHORIZATION'])) {
             return;  // Skip the CSRF checks for headless apps
         }
