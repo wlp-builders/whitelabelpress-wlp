@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Plugin & Theme Installer
  * Description: A plugin to install and manage plugins and themes from zip files in specified directories.
- * Version: 1.2
+ * Version: 1.3
  * Author: Your Name
  */
 
@@ -16,11 +16,8 @@ class CustomInstaller {
     private $themeSourceDir;
     private $pluginDestinationDir;
     private $themeDestinationDir;
-    private $wpdb;
 
     public function __construct() {
-        global $wpdb;
-        $this->wpdb = $wpdb;
         $this->pluginSourceDir = ABSPATH . 'wp-content/install/plugins/';
         $this->themeSourceDir = ABSPATH . 'wp-content/install/themes/';
         $this->pluginDestinationDir = ABSPATH . 'wp-content/plugins/';
@@ -83,13 +80,11 @@ class CustomInstaller {
 
         foreach ($folders as $folder) {
             $data = $this->extractData($folder, $type);
-
             if ($data) {
-                if (function_exists('log_message')) {
-                    log_message("Saving $type data for folder: $folder");
-                }
-                $this->removeExistingEntries($data['item_name'], $data['author_domain'], $type);
-                $this->saveDataToDB($data, $folder, $type);
+                // move
+                $uniqueId = bin2hex(openssl_random_pseudo_bytes(8)); // Generate a secure 8-byte hex ID
+                $this->moveFolder($folder, $uniqueId, $type);
+
             } else {
                 error_log("Failed to extract $type data for folder: $folder");
             }
@@ -99,38 +94,52 @@ class CustomInstaller {
     private function extractData($folder, $type) {
         $files = glob($folder . '/*.php');
 
+        log_message('[extractData] '.json_encode(['type'=>$type,'folder'=>$folder]));
+        log_message('[extractData] count files: '.count($files));
+
+
         foreach ($files as $file) {
+            if ($type == 'theme') {
+            $headers = get_file_data($file, [
+                'Name' => 'Theme Name',
+
+                'Version' => 'Version',
+                'AuthorURI' => 'Author URI'
+            ]);
+        } else {
             $headers = get_file_data($file, [
                 'Name' => 'Plugin Name',
                 'Version' => 'Version',
                 'AuthorURI' => 'Author URI'
             ]);
+        }
+
 
             if (!empty($headers['Name'])) {
-                if ($type === 'plugin') {
                     return [
                         'item_name' => $headers['Name'],
                         'version' => $headers['Version'],
                         'author_domain' => parse_url($headers['AuthorURI'], PHP_URL_HOST) ?? '',
-                        'type' => 'plugin'
+                        'type' => $type
                     ];
-                }
+                
             }
         }
 
-        // For themes, just look for style.css
+        // For themes, also look for style.css if nothing found
         if ($type === 'theme' && file_exists($folder . '/style.css')) {
             $themeData = get_file_data($folder . '/style.css', [
                 'Theme Name' => 'Theme Name',
                 'Version' => 'Version',
-                'Author' => 'Author'
+                'Author' => 'Author',
+                'AuthorURI' => 'Author URI'
             ]);
 
             if (!empty($themeData['Theme Name'])) {
                 return [
                     'item_name' => $themeData['Theme Name'],
                     'version' => $themeData['Version'],
-                    'author_domain' => '',
+                    'author_domain' => parse_url($headers['AuthorURI'], PHP_URL_HOST) ?? '',
                     'type' => 'theme'
                 ];
             }
@@ -140,52 +149,6 @@ class CustomInstaller {
         return false;
     }
 
-    private function removeExistingEntries($itemName, $authorDomain, $type) {
-        $deleted = $this->wpdb->delete(
-            $this->wpdb->prefix . $type . 's', // 'plugins' or 'themes'
-            [
-                'item_name' => $itemName,
-                'author_domain' => $authorDomain
-            ],
-            ['%s', '%s']
-        );
-
-        if ($deleted) {
-            if (function_exists('log_message')) {
-                log_message("Removed existing entries for $type: $itemName, Author: $authorDomain");
-            }
-        }
-    }
-
-    private function saveDataToDB($data, $folder, $type) {
-        $uniqueId = bin2hex(openssl_random_pseudo_bytes(8)); // Generate a secure 8-byte hex ID
-
-        $this->wpdb->insert(
-            $this->wpdb->prefix . 'plugins', // 'plugins' or 'themes'
-            [
-                'unique_id' => $uniqueId,
-                'type' => $data['type'],
-                'author_domain' => $data['author_domain'],
-                'item_name' => $data['item_name'],
-                'repo_url' => '',
-                'version' => $data['version'],
-                'status' => 'inactive'
-            ],
-            ['%s', '%s', '%s', '%s', '%s', '%s']
-        );
-
-        $id = $this->wpdb->insert_id;
-
-        if ($id) {
-            if (function_exists('log_message')) {
-                log_message("$type data saved to database. Unique ID: $uniqueId");
-            }
-            $this->moveFolder($folder, $uniqueId, $type);
-        } else {
-            error_log("Failed to save $type data to database for folder: $folder");
-            error_log("Database error: " . $this->wpdb->last_error);
-        }
-    }
 
     private function moveFolder($folder, $uniqueId, $type) {
         $destination = ($type === 'plugin' ? $this->pluginDestinationDir : $this->themeDestinationDir) . $uniqueId;
@@ -205,4 +168,6 @@ class CustomInstaller {
 }
 
 new CustomInstaller();
+
+
 
