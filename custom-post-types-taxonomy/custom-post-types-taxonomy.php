@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Post Types and Taxonomies Creator
  * Description: A single-page plugin to create and delete custom post types and taxonomies in WLP.
- * Version: 1.5
+ * Version: 1.6
  * Author: Neil
  */
 
@@ -88,7 +88,7 @@ function cpt_tc_admin_page() {
         <form method="POST">
             <?php wp_nonce_field('cpt_tc_action', 'cpt_tc_nonce'); ?>
 
-            <label for="custom_taxonomy_name">Taxonomy Name (e.g., "Categories"): </label>
+            <label for="custom_taxonomy_name">Taxonomy Name (e.g., "Product Categories"): </label>
             <input type="text" id="custom_taxonomy_name" name="custom_taxonomy_name" required>
 
             <label for="associated_post_types">Select Associated Post Types: </label>
@@ -259,4 +259,5 @@ function cpt_tc_remove_taxonomy($taxonomy) {
     unregister_taxonomy($taxonomy);
 }
 ?>
+
 
