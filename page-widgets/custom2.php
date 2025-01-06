@@ -8,48 +8,50 @@ Author: Your Name
 
 // Register widget areas
 function pswa_register_widget_areas() {
-    // Register widget areas for before and after the content on individual pages
-    $posts = get_posts();
-    $pages = get_pages();
-    foreach ($posts as $page) {
-        register_sidebar( array(
-            'name'          => 'Before Content - ' . $page->post_title,
-            'id'            => 'before_content_' . $page->ID,
+    // Get all public post types
+    $post_types = get_post_types(array('public' => true), 'objects');
+    
+    log_message('[pswa_register_widget_area] '.json_encode($post_types ));
+    foreach ($post_types as $post_type) {
+        // Skip attachments
+        if ($post_type->name === 'attachment') {
+            continue;
+        }
+
+        // Query all posts for this post type
+        $posts = get_posts(array(
+            'post_type' => $post_type->name,
+            'posts_per_page' => -1,  // Get all posts
+            'post_status' => 'publish'  // Only published posts
+        ));
+        
+        // Optionally, you could loop through the posts if needed, for example:
+        foreach ($posts as $post) {
+             // Process each post here if necessary
+        
+        // Register before and after content widget areas for each post type
+        register_sidebar(array(
+            'name'          => 'Before Content - ' . $post->post_title,
+            'id'            => 'before_content_' . $post->ID,
             'before_widget' => '<div class="before-widget">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
             'after_title'   => '</h3>',
-        ) );
-        
-        register_sidebar( array(
-            'name'          => 'After Content - ' . $page->post_title,
-            'id'            => 'after_content_' . $page->ID,
+        ));
+
+        register_sidebar(array(
+            'name'          => 'After Content - ' . $post->post_title,
+            'id'            => 'after_content_' . $post->ID,
             'before_widget' => '<div class="after-widget">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
             'after_title'   => '</h3>',
-        ) );
+        ));
     }
-    foreach ($pages as $page) {
-        register_sidebar( array(
-            'name'          => 'Before Content - ' . $page->post_title,
-            'id'            => 'before_content_' . $page->ID,
-            'before_widget' => '<div class="before-widget">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        ) );
-        
-        register_sidebar( array(
-            'name'          => 'After Content - ' . $page->post_title,
-            'id'            => 'after_content_' . $page->ID,
-            'before_widget' => '<div class="after-widget">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        ) );
+
     }
 }
+
 add_action( 'widgets_init', 'pswa_register_widget_areas' );
 
 // Display widgets before and after content on pages

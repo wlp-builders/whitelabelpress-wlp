@@ -102,7 +102,6 @@ class CustomInstaller {
             if ($type == 'theme') {
             $headers = get_file_data($file, [
                 'Name' => 'Theme Name',
-
                 'Version' => 'Version',
                 'AuthorURI' => 'Author URI'
             ]);
@@ -168,6 +167,5 @@ class CustomInstaller {
 }
 
 new CustomInstaller();
-
 
 
