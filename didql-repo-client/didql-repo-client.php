@@ -21,6 +21,7 @@ function didql_repo_client_menu() {
 }
     
     
+require_once __DIR__.'/lib/php-didql_repo_download_zip_operation.php';
     
 add_action('admin_menu', 'didql_repo_client_menu');
 
@@ -43,26 +44,89 @@ function didql_repo_client_menu_page() {
             <input type="text" placeholder="search.." name="search" />
             <?php submit_button('Send Message', 'primary', 'send_repo_update'); ?>
         </form>
+
+        <h1>repo__downloadOner</h1>
+
+        <form method="post">
+            <input type="text" placeholder="search.." name="search" />
+            <?php submit_button('Send Message', 'primary', 'repo__downloadOne'); ?>
+        </form>
+
+        
     </div>
     <?php
+
+      // Handle form submission
+      if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['repo__downloadOne'])) {
+        
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'repositories';
+
+        $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
+
+        foreach($results as $repo) {
+            $obj = [
+                'repo__downloadOne' => [$_POST['search']]
+            ];
+
+            $repo = $repo['repo_url'];
+            $headers = ['DID' => 'did:wlp:wlp42.local#sig'];
+            $response = didql_repo_send_request($repo, $obj, $headers);
+
+$data = [
+    'repo__downloadOne' => ['Private Document Tracker']
+];
+$install_path = ABSPATH; //'/var/www/wlp146.local';
+$type = 'plugins';
+$download = 'Private Document Tracker';
+
+// Execute the function
+$result = didql_repo_download_zip_operation($repo, $data, $headers, $install_path, $type, $download);
+
+
+
+            // Display response
+            echo '<div class="notice notice-info">';
+            echo '<p>Response '.$repo.':</p>';
+            echo '<pre>' . ($result) . ' characters</pre>';
+            echo '</div>';
+        }
+        if(count($results) == 0) {
+            echo '<div class="notice notice-info">';
+            echo '<p>No repositories added yet.:</p>';
+            echo '</div>';
+        }
+    }
 
     // Handle form submission
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_repo_update'])) {
         
-        $obj = [
-            'repo__search' => [$_POST['search']]
-        ];
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'repositories';
 
-        $repo = 'http://wlp41.local/';
-        $headers = ['DID' => 'did:wlp:wlp42.local#sig'];
-        $response = didql_repo_send_request($repo, $obj, $headers);
+        $results = $wpdb->get_results("SELECT * FROM $table_name", ARRAY_A);
+
+        foreach($results as $repo) {
+            $obj = [
+                'repo__search' => [$_POST['search']]
+            ];
+
+            $repo = $repo['repo_url'];
+            $headers = ['DID' => 'did:wlp:wlp42.local#sig'];
+            $response = didql_repo_send_request($repo, $obj, $headers);
 
 
-        // Display response
-        echo '<div class="notice notice-info">';
-        echo '<p>Response:</p>';
-        echo '<pre>' . esc_html(print_r($response, true)) . '</pre>';
-        echo '</div>';
+            // Display response
+            echo '<div class="notice notice-info">';
+            echo '<p>Response '.$repo.':</p>';
+            echo '<pre>' . esc_html(print_r($response, true)) . '</pre>';
+            echo '</div>';
+        }
+        if(count($results) == 0) {
+            echo '<div class="notice notice-info">';
+            echo '<p>No repositories added yet.:</p>';
+            echo '</div>';
+        }
     }
 }
 

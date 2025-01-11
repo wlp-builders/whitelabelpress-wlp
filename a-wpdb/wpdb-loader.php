@@ -16,6 +16,6 @@ global $wpdb;
 require_wp_db();
 
 // Set the database table prefix and the format specifiers for database table columns.
-$GLOBALS['table_prefix'] = $table_prefix;
+$GLOBALS['table_prefix'] = 'wlp_';
 wp_set_wpdb_vars();
 

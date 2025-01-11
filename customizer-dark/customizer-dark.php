@@ -2,7 +2,7 @@
 /**
  * Plugin Name: My Dark Theme Plugin
  * Description: A plugin to add dark theme styling with !important to specific forms in the WordPress customizer.
- * Version: 1.4
+ * Version: 1.5
  * Author: Your Name
  */
 
@@ -132,6 +132,14 @@ function add_customizer_dark_theme_colors_with_important() {
 
 #customize-header-actions, .customize-panel-back, .customize-controls-close, .accordion-section-title, .customize-section-back, .customize-section-title {
 border:none;
+}
+.wp-core-ui .button-primary-disabled, .wp-core-ui .button-primary.disabled, .wp-core-ui .button-primary:disabled, .wp-core-ui .button-primary[disabled] {
+    color: #444 !important;
+    background: black !important;
+}
+    .wp-full-overlay-sidebar, #customize-header-actions, .customize-panel-back, .customize-controls-close, .accordion-section-title, .customize-section-back, .customize-section-title {
+  background: #f0f0f1;
+  border-right: 1px solid #333;
 }
 
   
