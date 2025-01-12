@@ -128,6 +128,7 @@ function pm_render_admin_page() {
     // Render the table
     echo '<div class="wrap">';
     echo '<h1>Plugin Manager</h1>';
+    echo '<p>You can use the wp-content/install folder to install plugins and themes. Simply put a folder or zip in the right subfolder.</p>';
     echo '<form method="post">';
     echo '<table class="wp-list-table widefat fixed striped">';
     echo '<thead><tr><th><input type="checkbox" id="select_all" /></th><th style="width:270px;">Name</th><th>Description</th></tr></thead>';
