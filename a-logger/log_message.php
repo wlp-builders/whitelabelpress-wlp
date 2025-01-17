@@ -7,7 +7,7 @@ function log_message($message) {
         $formatted_message = "[$timestamp] $message\n";
         file_put_contents(WLP_LOGGER_FILE, $formatted_message, FILE_APPEND);
     } else {
-        var_dump('WLP_LOGGER_FILE not defined');
+        //var_dump('WLP_LOGGER_FILE not defined');
     }
 }
 
