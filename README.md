@@ -48,6 +48,9 @@ Add the following line to your /etc/hosts file:
 127.0.0.1 wlp1.local
 ```
 
+### Install help for New Container Hosting Partners
+See <a href="https://github.com/wlp-builders/hosting-cli">https://github.com/wlp-builders/hosting-cli</a>
+
 ### Install help for Windows
 
 You can definitely run this on Windows. However most support will be for Linux (to encourage people to start new hosting companies with VPS/Docker/Podman). Here's a concise guide to start using Linux for more (development) freedom:
