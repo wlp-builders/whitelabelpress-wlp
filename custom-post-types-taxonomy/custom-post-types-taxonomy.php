@@ -259,6 +259,6 @@ function cpt_tc_remove_taxonomy($taxonomy) {
     // Optionally deregister the taxonomy
     unregister_taxonomy($taxonomy);
 }
-?>
 
-
+// Next Load Custom Fields
+require_once __DIR__.'/pages/fields.php';
