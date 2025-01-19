@@ -4,11 +4,8 @@
  * Description: A wrapper plugin to use DIDs. Lib itself is licensed under Spirit of Time 1.0.
  * Version: 1.1
  * Author: Neil
- * License: GPL
+ * License: Spirit of Time 1.0
  */
-
-
-
 require_once __DIR__.'/lib/wlp_did_create_document.php';
 require_once __DIR__.'/lib/wlp_createDidKeyFiles.php';
 
@@ -46,4 +43,5 @@ function did_id_get_current_domain() {
 }
 
 
+// simply compatible with CP,WP,and others
 add_action('init','did_id_generate_did'); // generate did.json if not exists

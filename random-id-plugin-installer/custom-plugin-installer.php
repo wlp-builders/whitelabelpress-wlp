@@ -4,7 +4,7 @@
  * Description: A plugin to install and manage plugins and themes from zip files in specified directories.
  * Version: 1.4
  * Author: Neil
- * License: GPL
+ * License: Spirit of Time 1.0
  */
 
 if (!defined('ABSPATH')) {

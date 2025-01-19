@@ -3,7 +3,7 @@
 Plugin Name: DidQL Wrapper 
 Description: A simple didql (communication protocol) wrapper for did_users and plugin routes
 Version: 1.1
-License: GPL
+License: Spirit of Time 1.0
 Author: Neil
 */
 
@@ -13,4 +13,6 @@ if (!defined('ABSPATH')) {
 }
 
 require_once __DIR__.'/lib/didql.php';
+
+// simple compatible interface CP,WP,etc
 add_action('init', 'didql_execute');

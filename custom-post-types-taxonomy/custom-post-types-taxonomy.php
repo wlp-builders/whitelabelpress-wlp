@@ -4,7 +4,7 @@
  * Description: A single-page plugin to create and delete custom post types and taxonomies in WLP.
  * Version: 1.8
  * Author: Neil
- * License: GPL
+ * License: Spirit of Time 1.0
  */
 
 // Prevent direct access

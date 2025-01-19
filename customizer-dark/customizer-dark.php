@@ -4,7 +4,7 @@
  * Description: A plugin to add dark theme styling with !important to specific forms in the WordPress customizer.
  * Version: 1.6
  * Author: Neil
- * License: GPL
+ * License: Spirit of Time 1.0
  */
 
 function add_customizer_dark_theme_colors_with_important() {
@@ -146,8 +146,11 @@ border:none;
   
     ";
 
+    // simply compatible interfaces
     wp_enqueue_style('wp-admin'); // Ensure the admin styles are loaded.
     wp_add_inline_style('wp-admin', $custom_css); // Add inline custom CSS.
 }
+
+// simply compatible
 add_action('customize_controls_enqueue_scripts', 'add_customizer_dark_theme_colors_with_important');
 

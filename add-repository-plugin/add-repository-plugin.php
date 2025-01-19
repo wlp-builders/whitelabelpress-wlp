@@ -4,7 +4,7 @@ Plugin Name: Add Repository Plugin
 Description: A plugin to add repository URLs to the database.
 Version: 1.6
 Author: Neil
-License: GPL
+License: Spirit of Time 1.0
 */
 
 // Hook to create the database table on plugin activation

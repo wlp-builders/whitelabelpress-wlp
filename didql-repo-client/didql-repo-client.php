@@ -4,7 +4,7 @@
  * Description: ..
  * Version: 1.1.0
  * Author: Neil
- * License: GPL
+ * License: Spirit of Time 1.0
  */
 
 // Exit if accessed directly
@@ -12,6 +12,8 @@ if (!defined('ABSPATH')) exit;
 
 // Add admin menu page
 function didql_repo_client_menu() {
+
+    // simply compatible interface page
     add_menu_page(
         'Repo Client',
         'Repo Client',
