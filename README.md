@@ -81,3 +81,7 @@ You can definitely run this on Windows. However most support will be for Linux (
    - Enjoy more (development) freedom
 
  
+### License
+Main license is Spirit of Time 1.0. This is basically MIT with restricted usage for some already big established players/competitors specified by name. 
+- The core plugins that use mostly core code are licensed GPL, as they should.
+- Everything else false under the Spirit of Time 1.0 (MIT like) license.
