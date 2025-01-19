@@ -4,9 +4,10 @@ Plugin Name: Custom Settings Menu
 Description: Customizes the WordPress Settings menu using add_menu_page and add_submenu_page.
 Version: 1.1
 Author: Neil
-License: GPL
+License: LGPL
 */
 
+// cp/wp/other compatible
 // Hook into the admin_menu action to modify the settings menu
 add_action( 'admin_menu', 'custom_settings_menu', 10 );
 
@@ -79,4 +80,3 @@ function custom_settings_menu() {
         'options-privacy.php'           // Menu slug
     );
 }
-?>

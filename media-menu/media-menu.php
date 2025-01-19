@@ -4,9 +4,10 @@
  * Description: A custom plugin to add and customize the Media menu in WordPress.
  * Version: 1.1
  * Author: Neil
- * License: GPL
+ * License: LGPL
  */
 
+// cp/wp/other compatible
 // Hook to 'admin_menu' to add custom menus
 add_action( 'admin_menu', 'custom_media_menu' );
 

@@ -4,7 +4,7 @@
  * Description: Adds a custom post type for Social Thoughts with no title, using the post ID, and a 500-character description.
  * Version: 1.1
  * Author: Neil
- * License: GPL
+ * License: LGPL
  */
 
 // Exit if accessed directly
@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Register the 'Social Thoughts' custom post type
 function human_thoughts_post_type() {
+    // cp,wp,other compatible
     $args = array(
         'labels' => array(
             'name'                  => 'Human Thoughts',
@@ -37,8 +38,11 @@ function human_thoughts_post_type() {
         'menu_icon'         => 'dashicons-format-quote',
     );
 
+    // cp,wp,other compatible
     register_post_type( 'human_thought', $args );
 }
+
+// cp,wp,other compatible
 add_action( 'init', 'human_thoughts_post_type' );
 
 // Automatically populate the post title with the post ID (when creating/editing the post)
@@ -51,6 +55,8 @@ function set_human_thought_title( $data, $postarr ) {
 
     return $data;
 }
+
+// cp,wp,other compatible
 add_filter( 'wp_insert_post_data', 'set_human_thought_title', 10, 2 );
 
 // Limit the description (post content) to 500 characters
@@ -63,6 +69,8 @@ function limit_human_thought_description_length( $content ) {
     }
     return $content;
 }
+
+// cp,wp,other compatible
 add_filter( 'content_save_pre', 'limit_human_thought_description_length' );
 
 // Optional: Add a custom message to the post editor for Social Thoughts (indicating the limit)
@@ -72,5 +80,7 @@ function human_thought_editor_message() {
         echo '<div style="color: red; font-weight: bold;">Please limit your description to 500 characters.</div>';
     }
 }
+
+// cp,wp,other compatible
 add_action( 'edit_form_after_title', 'human_thought_editor_message' );
 

@@ -4,14 +4,16 @@ Plugin Name: Custom Plugins Menu
 Description: Customizes the WordPress Plugins menu using add_menu_page and add_submenu_page, with a redirect to the plugin manager.
 Version: 1.1
 Author: Neil
-License: GPL
+License: LGPL
 */
 
 // Hook into the admin_menu action to modify the plugins menu
+// cp/wp/other compatible
 add_action( 'admin_menu', 'custom_plugins_menu', 10 );
 
 function custom_plugins_menu() {
     // Modify the "Plugins" menu
+    // cp/wp/other compatible
     add_menu_page(
         'Plugins',       // Page title
         __( 'Plugins' ),                        // Menu title
@@ -30,6 +32,7 @@ function custom_plugins_menu() {
 
 // Callback function that handles the redirect
 function redirect_to_plugin_manager() {
+    // cp/wp/other compatible
     wp_redirect( admin_url( 'plugins.php?page=plugin-manager' ) ); // Redirect to /wp-admin/plugins.php?page=plugin-manager
     exit; // Always call exit after a redirect
 }

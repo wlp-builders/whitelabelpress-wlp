@@ -4,8 +4,10 @@ Plugin Name: Page-Specific Widget Areas
 Description: Adds widget areas before and after content on each page, configurable via the WordPress Customizer.
 Version: 1.0
 Author: Neil
-License: GPL
+License: LGPL
 */
+
+// uses cp/wp/other compatible methods
 
 // Register widget areas
 function pswa_register_widget_areas() {
