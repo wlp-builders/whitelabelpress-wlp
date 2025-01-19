@@ -1,0 +1,305 @@
+#wpbody h1, #wpbody h2, #wpbody h3, #wpbody h4 , #wpbody h5,  #wpbody h6 {
+    color:white;
+    }
+    body {
+    background:rgb(28 35 39)!important;
+    }
+    
+    #wpbody .postbox, #wpbody textarea , #wpbody input,  #wpbody select {
+        color:white!important;
+        background: #000000!important;
+    }
+    
+    #wpbody .postbox{
+    color:#ccc!important;
+        border: 1px solid #111;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+    }
+    
+    #wpbody label {
+    color:white;
+    }
+    
+    #wpbody #activity-widget #the-comment-list .comment-item {
+        background: transparent;
+        padding: 12px;
+        position: relative;
+        color: #d1d1d1;
+    }
+    
+    #wpbody ul#adminmenu a.wp-has-current-submenu:after, #wpbody ul#adminmenu>li.current>a.current:after {
+        border-right-color: #1b2327!important;
+    }
+    
+    ul#adminmenu a.wp-has-current-submenu:after, ul#adminmenu>li.current>a.current:after {
+        border-right-color: #1b2327!important;
+    }
+    
+    
+    #wpbody .widefat td, #wpbody .widefat th {
+        color: #50575e;
+        background: black;
+        color: white;
+    }
+    #wpbody .widefat tfoot tr td, #wpbody .widefat tfoot tr th, #wpbody  .widefat thead tr td, #wpbody .widefat thead tr th {
+        
+    
+    color: #2c3338;
+        background: black;
+        color: white;
+    }
+    
+    #wpbody .widefat thead tr th a { color:white;}
+    #wpbody .widefat tfoot tr th a { color:white;}
+    
+    
+    
+    #wpbody .wp-filter {
+        border: 1px solid #000000;
+        background: #000000;
+    }
+    
+    #titlediv #title, .mce-container, .mce-container *, .mce-widget, .mce-widget *, .mce-reset, #wp-content-editor-tools {
+        background-color: #000000!important;
+    }
+    .wp-editor-container {
+        border: none!important;
+    }
+    
+    #contextual-help-wrap, #screen-options-wrap {
+        background: black!important;
+        color: white!important;
+    }
+    
+    .wp-admin a {
+        color: #cc8bd5;
+    }
+    
+    #major-publishing-actions {
+        background: black!important;
+    }
+    
+    .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel {
+        border: none!important;
+        background-color: black!important;
+    }
+    
+    #post-body ul.add-menu-item-tabs li.tabs a, #post-body ul.category-tabs li.tabs a, #side-sortables .add-menu-item-tabs .tabs a, #side-sortables .category-tabs .tabs a, .wp-tab-bar .wp-tab-active a {
+        color: white!important;
+    }
+    
+    .wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs {
+        border: none!important;
+        background: none!important;
+    }
+    
+    #menu-management .menu-edit, #menu-settings-column .accordion-container, .comment-ays, .feature-filter, .imgedit-group, .manage-menus, .menu-item-handle, .popular-tags, .stuffbox, .widget-inside, .widget-top, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat {
+        border: none!important;
+    }
+    
+    #screen-meta-links .show-settings {
+        border: 1px solid #000000!important;
+        background: #000000!important;
+    }
+    
+    .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active {
+    
+        background: black!important;
+        color: white!important;
+        border-color: white!important;
+    }
+    
+    
+    .wp-switch-editor, .html-active .switch-html, .tmce-active .switch-tmce, .wp-core-ui .button, .wp-core-ui .button-secondary {
+        background: black!important;
+        color: white!important;
+        border-color: white!important;
+    }
+    
+    .notice-success, div.updated {
+        background: #014f15!important;
+        color: white!important;
+        border: none!important;
+    }
+    
+    .notice-success a, div.updated  a{
+    color:white!important;
+    }
+    
+    .widefat thead td, .widefat thead th {
+        border-bottom: 1px solid #333333!important;
+    }
+    
+    .widefat tfoot td, .widefat tfoot th {
+           border-top: 1px solid #333333!important;
+    }
+    
+    tr td {
+           border-bottom: 1px solid #333333!important;
+    
+    }
+    
+    .widefat ol, .widefat p, .widefat ul {
+        color: #ffffff!important;
+    }
+    
+    
+    #wpbody .wrap {
+        padding: 24px 30px;
+    }
+    
+    body{
+        background: rgb(20 27 30) !important;
+    background:black!important;
+    
+    }
+    
+    #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap, #wpadminbar {
+        background-color: rgb(16, 14, 19) !important;    background-color: rgb(0,0,0) !important;
+    }
+    
+    #adminmenu li.menu-top {
+        min-height: 45px!important;
+    }
+    
+    /* Replace WordPress admin menu icons with Font Awesome icons */
+    /* Apply Font Awesome to all Dashicons */
+    [class^="dashicons-"]:before, [class*=" dashicons-"]:before,  #wp-admin-bar-my-account>.ab-item:before  {
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 900 !important; /* Make sure Font Awesome uses its solid icons (weight 900) */
+    }
+    
+    /* Dashboard */
+    .dashicons-dashboard:before {
+        content: "\f0e4"!important;  /* fa-tachometer-alt (Dashboard) */
+    }
+    
+    /* Posts */
+    .dashicons-admin-post:before {
+        content: "\f044"!important; /* fa-edit (Posts) */
+    }
+    
+    /* Key-Value Storage */
+    .dashicons-storage:before {
+        content: "\f1c0"!important; /* fa-database (Key-Value Storage) */
+    }
+    
+    /* Media */
+    .dashicons-admin-media:before {
+        content: "\f03e"!important; /* fa-image (Media) */
+    }
+    
+    /* Pages */
+    .dashicons-admin-page:before {
+        content: "\f15c"!important; /* fa-file-alt (Pages) */
+    }
+    
+    /* Other icons can be replaced similarly */
+    .dashicons-admin-appearance:before {
+        content: "\f0a8"!important; /* fa-paint-brush (Appearance) */
+    }
+    
+    .dashicons-admin-plugins:before {
+        content: "\f1e6"!important; /* fa-plug (Plugins) */
+    }
+    
+    .dashicons-admin-users:before, #wp-admin-bar-my-account>.ab-item:before {
+        content: "\f007"!important;  /* fa-users (Users) */
+    }
+    
+    .dashicons-admin-settings:before {
+        content: "\f013"!important; /* fa-cogs (Settings) */
+    }
+
+    .dashicons-admin-comments:before {
+        content: "\f075"!important; /* fa-cogs (Settings) */
+    }
+
+    .dashicons-admin-tools:before {
+        content: "\f0ad"!important; /* fa-cogs (Settings) */
+    }
+
+    .dashicons-shield:before {
+        content: "\f084"!important; /* fa-cogs (Settings) */
+    }
+
+    
+
+
+.dashicons-admin-appearance:before{
+    content: "\f040"!important; /* fa-cogs (Settings) */
+
+}    
+    
+    .health-check-header, .privacy-settings-header {
+        background: black!important;
+        border-bottom: 1px solid grey!important;
+    }
+    
+    .nav-menus-php #post-body {
+        border-top: 1px solid grey!important;
+        border-bottom: 1px solid grey!important;
+        background: black!important;
+    }
+    
+    #nav-menu-footer, #nav-menu-header {
+        background: black!important;
+    }
+    
+    
+    .control-section .accordion-section-title, .customize-pane-child .accordion-section-title {
+        background: black!important;
+    }
+    
+    .manage-menus {
+        background: black!important;
+    }
+    
+    .notice-error.notice-alt {
+        background-color: black!important;
+    }
+    
+    #menu-to-edit .menu-item-invalid .menu-item-handle {
+        background: black!important;
+    }
+    
+    .bulk-select-button {
+        background: black!important;
+        border: 1px solid grey!important;
+    }
+    
+    .nav-tab-active, .nav-tab-active:focus, .nav-tab-active:focus:active, .nav-tab-active:hover {
+        border-bottom: 1px solid grey!important;
+        background: black!important;
+    color:white!important;
+    }
+    
+    
+    .accordion-section-content {
+        background: black!important;
+    }
+    
+    .notice, div.error, div.updated {
+        background: black!important;
+    }
+    
+    .menu-item-handle, .widget .widget-top {
+        background: black!important;
+        color: white!important;
+        border: 1px solid grey !important;
+    }
+    
+    .comment-ays, .feature-filter, .imgedit-group, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat {
+        background: black!important;
+    }
+    
+    summary.sidebar-name {
+        color: white;
+    }
+    
+    .widget-inside {
+        background: black!important;
+    }
+    body {
+            color: #acadae!important;
+    }

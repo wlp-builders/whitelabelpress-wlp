@@ -9,7 +9,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 2. **Restricted Use**:  
    The following entities (hereafter referred to as "Restricted Entities") are prohibited from using this software without prior written authorization from the copyright holder:
-   - The following competitors and their subsidiaries, affiliates, contractors, or agents: **Fiverr, UpWork, Meta Platforms (Facebook), Apple, Amazon, Netflix, Alphabet (Google), Automattic Inc., WP Engine, Bluehost, SiteGround, GoDaddy, Namecheap, IONOS, Pressable, GreenGeeks, Hostinger, Kinsta, Liquid Web, Flywheel, A2 Hosting, Cloudways, Tsohost, WPX Hosting, InMotion Hosting, HostPapa and DreamHost.**
+   - The following competitors and their subsidiaries, affiliates, contractors, or agents: **Meta Platforms (Facebook), Apple, Amazon, Netflix, Alphabet (Google), Automattic Inc., WP Engine, Bluehost, SiteGround, GoDaddy, Namecheap, IONOS, Pressable, GreenGeeks, Hostinger, Kinsta, Liquid Web, Flywheel, A2 Hosting, Cloudways, Tsohost, WPX Hosting, InMotion Hosting, HostPapa and DreamHost.**
 
 3. **Anti-Circumvention Clause**:  
    Restricted Entities are prohibited from indirectly using this software through:

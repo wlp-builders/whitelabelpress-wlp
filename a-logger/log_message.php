@@ -1,4 +1,8 @@
 <?php
+/*
+Author: Neil
+License: Spirit of Time 1.0
+*/
 
 // Simple logging function
 function log_message($message) {

@@ -1,11 +1,10 @@
 <?php
 /**
  * Plugin Name: Custom Media Menu
- * Plugin URI: http://example.com
  * Description: A custom plugin to add and customize the Media menu in WordPress.
- * Version: 1.0
- * Author: Your Name
- * Author URI: http://example.com
+ * Version: 1.1
+ * Author: Neil
+ * License: GPL
  */
 
 // Hook to 'admin_menu' to add custom menus

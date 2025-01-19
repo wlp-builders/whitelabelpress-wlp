@@ -3,7 +3,8 @@
 Plugin Name: Code Copy HTML Widget
 Description: A widget that displays essential HTML content without the DOCTYPE, <html>, <head>, and <body> tags for easy site customization.
 Version: 1.2
-Author: Your Name
+Author: Neil
+License: GPL
 */
 
 class Code_Copy_HTML_Widget extends WP_Widget {

@@ -1,9 +1,10 @@
 <?php
 /**
- * Plugin Name: DIDQL Repo Client
+ * Plugin Name: Wrapper DIDQL Repo Client
  * Description: ..
  * Version: 1.1.0
- * Author: Your Name
+ * Author: Neil
+ * License: GPL
  */
 
 // Exit if accessed directly

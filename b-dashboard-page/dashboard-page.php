@@ -3,7 +3,8 @@
 Plugin Name: Custom Dashboard Grid with Collapsible Menu (Dark Mode)
 Description: Replaces the default Dashboard with a custom page displaying the top-level menu items in a 3-column grid layout. Adds a collapsible sidebar menu with dark theme.
 Version: 1.0
-Author: Your Name
+Author: Neil
+License: GPL
 */
 
 

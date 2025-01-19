@@ -3,7 +3,8 @@
 Plugin Name: Custom Appearance Menu
 Description: Customizes the WordPress Appearance menu using add_menu_page and add_submenu_page.
 Version: 1.0
-Author: Your Name
+Author: Neil
+License: GPL
 */
 
 // Hook into the admin_menu action to modify the Appearance menu

@@ -2,8 +2,9 @@
 /**
  * Plugin Name: Custom Plugin & Theme Installer
  * Description: A plugin to install and manage plugins and themes from zip files in specified directories.
- * Version: 1.3
- * Author: Your Name
+ * Version: 1.4
+ * Author: Neil
+ * License: GPL
  */
 
 if (!defined('ABSPATH')) {

@@ -2,8 +2,9 @@
 /**
  * Plugin Name: My Dark Theme Plugin
  * Description: A plugin to add dark theme styling with !important to specific forms in the WordPress customizer.
- * Version: 1.5
- * Author: Your Name
+ * Version: 1.6
+ * Author: Neil
+ * License: GPL
  */
 
 function add_customizer_dark_theme_colors_with_important() {

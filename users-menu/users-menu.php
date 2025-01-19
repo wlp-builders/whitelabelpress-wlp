@@ -3,7 +3,8 @@
 Plugin Name: Custom Users Menu
 Description: Customizes the WordPress Users menu based on user capabilities using add_menu_page and add_submenu_page.
 Version: 1.0
-Author: Your Name
+Author: Neil
+License: GPL
 */
 
 // Hook into the admin_menu action to modify the users menu

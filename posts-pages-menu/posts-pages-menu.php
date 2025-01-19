@@ -2,8 +2,9 @@
 /*
 Plugin Name: Custom Post Type Menu
 Description: Customizes the admin menu for custom post types and their taxonomies using add_menu_page and add_submenu_page.
-Version: 1.0
-Author: Your Name
+Version: 1.1
+Author: Neil
+License: GPL
 */
 
 // Hook into the admin_menu action to modify the admin menu

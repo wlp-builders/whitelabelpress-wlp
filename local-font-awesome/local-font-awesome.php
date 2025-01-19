@@ -3,7 +3,8 @@
  * Plugin Name: Local Font Awesome
  * Description: A simple plugin to load Font Awesome locally in the WordPress admin area.
  * Version: 1.0
- * Author: Your Name
+ * Author: Neil
+ * License: GPL
  */
 
 if (!defined('ABSPATH')) {

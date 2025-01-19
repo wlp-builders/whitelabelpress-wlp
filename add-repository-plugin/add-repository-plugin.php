@@ -1,9 +1,10 @@
 <?php
 /*
 Plugin Name: Add Repository Plugin
-Description: A plugin to add repository URLs to the WordPress database.
+Description: A plugin to add repository URLs to the database.
 Version: 1.6
-Author: Your Name
+Author: Neil
+License: GPL
 */
 
 // Hook to create the database table on plugin activation

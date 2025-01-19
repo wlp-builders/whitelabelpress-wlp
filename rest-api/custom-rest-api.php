@@ -4,6 +4,7 @@
  * Description: Core plugin for Rest API
  * Version: 1.0
  * Author: Neil
+ * License: GPL
  */
 
 // Hook to the admin menu action

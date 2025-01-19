@@ -2,8 +2,9 @@
 /*
 Plugin Name: Custom Plugins Menu
 Description: Customizes the WordPress Plugins menu using add_menu_page and add_submenu_page, with a redirect to the plugin manager.
-Version: 1.0
-Author: Your Name
+Version: 1.1
+Author: Neil
+License: GPL
 */
 
 // Hook into the admin_menu action to modify the plugins menu

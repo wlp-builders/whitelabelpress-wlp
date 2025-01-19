@@ -3,7 +3,8 @@
 Plugin Name: Admin Dark Mode Toggle
 Description: A plugin to enable dark mode in the WordPress admin area by default and edit CSS from the settings page.
 Version: 1.4
-Author: Your Name
+Author: Neil
+License: GPL
 */
 
 // Exit if accessed directly

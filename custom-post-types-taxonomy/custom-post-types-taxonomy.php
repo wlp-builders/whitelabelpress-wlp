@@ -2,8 +2,9 @@
 /**
  * Plugin Name: Custom Post Types and Taxonomies Creator
  * Description: A single-page plugin to create and delete custom post types and taxonomies in WLP.
- * Version: 1.7
+ * Version: 1.8
  * Author: Neil
+ * License: GPL
  */
 
 // Prevent direct access
