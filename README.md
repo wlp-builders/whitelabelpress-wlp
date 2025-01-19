@@ -83,5 +83,6 @@ You can definitely run this on Windows. However most support will be for Linux (
  
 ### License
 Main license is Spirit of Time 1.0. This is basically MIT with restricted usage for some already big established players/competitors specified by name. 
-- The core plugins that use mostly core code are licensed GPL, as they should.
+- The core plugins that use mostly core code/require core files are licensed GPL, as they should.
+- Core plugins that contain only CP/WP/Other COMPATIBLE PHP code are licensed AGPL (no strict requires to core files).
 - Everything else false under the Spirit of Time 1.0 (MIT like) license.
